@@ -4,7 +4,6 @@ import (
 	"context"
 	"errors"
 
-	"github.com/aws/aws-lambda-go/events"
 	"github.com/sirupsen/logrus"
 	"github.com/xsided/h8tp/request"
 	"github.com/xsided/h8tp/response"
@@ -75,8 +74,8 @@ const (
 
 // WithRequestLogger provides a request logger to the requests context
 // Pulls required information from the request context and instantiates a new logger
-func WithRequestLogger(h func(context.Context, request.Request) (events.APIGatewayProxyResponse, error)) func(context.Context, request.Request) (events.APIGatewayProxyResponse, error) {
-	return func(ctx context.Context, req request.Request) (events.APIGatewayProxyResponse, error) {
+func WithRequestLogger(h func(context.Context, request.Request) (response.Response, error)) func(context.Context, request.Request) (response.Response, error) {
+	return func(ctx context.Context, req request.Request) (response.Response, error) {
 
 		ownerid, ok := req.RequestContext.Authorizer["owner_id"]
 		if !ok {

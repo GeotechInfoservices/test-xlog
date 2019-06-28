@@ -15,7 +15,7 @@ import (
 )
 
 func TestRequestLogger(t *testing.T) {
-	handler := WithRequestLogger(func(ctx context.Context, req request.Request) (events.APIGatewayProxyResponse, error) {
+	handler := WithRequestLogger(func(ctx context.Context, req request.Request) (response.Response, error) {
 		logger, err := GetLogger(ctx)
 		logger.Logger.SetFormatter(&logrus.TextFormatter{})
 		memLog := &bytes.Buffer{}
