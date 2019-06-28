@@ -82,7 +82,7 @@ func WithRequestLogger(h func(context.Context, request.Request) (response.Respon
 			return response.InvalidRequest("misconfigured logger")
 		}
 
-		userid, ok := req.RequestContext.Authorizer["subject"]
+		userid, ok := req.RequestContext.Authorizer["principalId"]
 		if !ok {
 			return response.InvalidRequest("misconfigured logger")
 		}
