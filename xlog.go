@@ -87,9 +87,9 @@ func WithRequestLogger(h func(context.Context, request.Request) (response.Respon
 			return response.InvalidRequest("misconfigured logger")
 		}
 
-		trace, ok := req.Headers["x-trace-id"]
+		trace, ok := req.Headers["X-Trace-Id"]
 		if !ok {
-			return response.InvalidRequest("Must provide x-trace-id header in request")
+			return response.InvalidRequest("Must provide X-Trace-Id header in request")
 		}
 
 		l := NewRequestLogger(trace, userid.(string), ownerid.(string))
