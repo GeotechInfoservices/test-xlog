@@ -46,15 +46,27 @@ func TestRequestLogger(t *testing.T) {
 		return response.OK("test")
 	})
 
-	handler(context.Background(), request.Request{
+	resp, err := handler(context.Background(), request.Request{
 		Headers: map[string]string{
 			"x-trace-id": "some-trace-id",
 		},
 		RequestContext: events.APIGatewayProxyRequestContext{
 			Authorizer: map[string]interface{}{
-				"subject":  "some-user-id",
-				"owner_id": "some-owner-1",
+				"principalId": "some-user-id",
+				"owner_id":    "some-owner-1",
 			},
 		},
 	})
+
+	if err != nil {
+		fmt.Printf("Test failed with: %s", err)
+		t.Log()
+		t.Fail()
+	}
+
+	if resp.StatusCode != 200 {
+		fmt.Printf("Did not end with 200")
+		t.Log()
+		t.Fail()
+	}
 }

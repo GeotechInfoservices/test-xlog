@@ -88,7 +88,10 @@ func WithRequestLogger(h func(context.Context, request.Request) (response.Respon
 			return response.InvalidRequest("misconfigured logger")
 		}
 
-		header := http.Header(req.MultiValueHeaders)
+		header := http.Header{}
+		for key, val := range req.Headers {
+			header.Add(key, val)
+		}
 
 		trace := header.Get("X-Trace-Id")
 		if trace == "" {
