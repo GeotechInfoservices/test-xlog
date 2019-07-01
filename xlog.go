@@ -93,6 +93,11 @@ func WithRequestLogger(h func(context.Context, request.Request) (response.Respon
 			header.Add(key, val)
 		}
 
+		logrus.WithFields(logrus.Fields{
+			"request_headers": req.Headers,
+			"parsed_headers":  header,
+			"trace_id":        header.Get("X-Trace-Id"),
+		}).Infof("Setting up logger")
 		trace := header.Get("X-Trace-Id")
 		if trace == "" {
 			return response.InvalidRequest("Must provide X-Trace-Id header in request")
@@ -112,6 +117,9 @@ func GetLogger(ctx context.Context) (*XLog, error) {
 	case *XLog:
 		return logger.(*XLog), nil
 	default:
+		logrus.WithFields(logrus.Fields{
+			"logger": logger,
+		}).Errorf("Logger not defined")
 		return &XLog{}, errors.New("No logger in context")
 	}
 }
