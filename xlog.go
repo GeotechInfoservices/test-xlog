@@ -3,6 +3,7 @@ package xlog
 import (
 	"context"
 	"errors"
+	"net/http"
 
 	"github.com/sirupsen/logrus"
 	"github.com/xsided/h8tp/request"
@@ -87,8 +88,10 @@ func WithRequestLogger(h func(context.Context, request.Request) (response.Respon
 			return response.InvalidRequest("misconfigured logger")
 		}
 
-		trace, ok := req.Headers["X-Trace-Id"]
-		if !ok {
+		header := http.Header(req.MultiValueHeaders)
+
+		trace := header.Get("X-Trace-Id")
+		if trace == "" {
 			return response.InvalidRequest("Must provide X-Trace-Id header in request")
 		}
 
