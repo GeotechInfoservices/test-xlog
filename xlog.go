@@ -2,7 +2,7 @@ package xlog
 
 import (
 	"context"
-	"errors"
+	"fmt"
 	"net/http"
 
 	"github.com/sirupsen/logrus"
@@ -110,16 +110,14 @@ func WithRequestLogger(h func(context.Context, request.Request) (response.Respon
 }
 
 // GetLogger returns a logger from a context
-func GetLogger(ctx context.Context) (*XLog, error) {
+func GetLogger(ctx context.Context) *XLog {
 	logger := ctx.Value(Logger)
 
 	switch logger.(type) {
 	case *XLog:
-		return logger.(*XLog), nil
+		return logger.(*XLog)
 	default:
-		logrus.WithFields(logrus.Fields{
-			"logger": logger,
-		}).Errorf("Logger not defined")
-		return &XLog{}, errors.New("No logger in context")
+		panic(fmt.Sprintf("Misconfigured logger: %+v", logger))
+		return &XLog{}
 	}
 }
