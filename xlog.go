@@ -43,8 +43,11 @@ type XLog struct {
 	Logger    *logrus.Logger
 }
 
+// Fields for a logger
+type Fields map[string]interface{}
+
 // Error logs an error in xsided format
-func (x *XLog) Error(err error, msg string, args map[string]interface{}) {
+func (x *XLog) Error(err error, msg string, args Fields) {
 
 	fields := logrus.Fields{
 		"error":    err,
@@ -61,7 +64,7 @@ func (x *XLog) Error(err error, msg string, args map[string]interface{}) {
 }
 
 // Info logs info level log in xsided format
-func (x *XLog) Info(msg string, args map[string]interface{}) {
+func (x *XLog) Info(msg string, args Fields) {
 
 	fields := logrus.Fields{
 		"trace_id": x.TracingID,
@@ -123,6 +126,5 @@ func GetLogger(ctx context.Context) *XLog {
 		return logger.(*XLog)
 	default:
 		panic(fmt.Sprintf("Misconfigured logger: %+v", logger))
-		return &XLog{}
 	}
 }
