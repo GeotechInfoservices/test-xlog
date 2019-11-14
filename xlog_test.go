@@ -16,15 +16,10 @@ import (
 
 func TestRequestLogger(t *testing.T) {
 	handler := WithRequestLogger(func(ctx context.Context, req request.Request) (response.Response, error) {
-		logger, err := GetLogger(ctx)
+		logger := GetLogger(ctx)
 		logger.Logger.SetFormatter(&logrus.TextFormatter{})
 		memLog := &bytes.Buffer{}
 		logger.Logger.SetOutput(memLog)
-		if err != nil {
-			fmt.Println("Error while trying to get logger", err)
-			t.Log()
-			t.Fail()
-		}
 
 		logger.Info("Test", map[string]interface{}{
 			"some": "message",
@@ -32,13 +27,13 @@ func TestRequestLogger(t *testing.T) {
 		})
 
 		if !strings.Contains(string(memLog.Bytes()), "trace_id=some-trace-id") {
-			fmt.Println("Log doesn't contain trace information", err)
+			fmt.Println("Log doesn't contain trace information")
 			t.Log()
 			t.Fail()
 		}
 
 		if !strings.Contains(string(memLog.Bytes()), "user_id=some-user-id") {
-			fmt.Println("Log doesn't contain user information", err)
+			fmt.Println("Log doesn't contain user information")
 			t.Log()
 			t.Fail()
 		}

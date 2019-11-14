@@ -24,6 +24,16 @@ func NewRequestLogger(trace string, userID string, ownerID string) *XLog {
 	}
 }
 
+// NewLogger Returns a clean instance of XLog
+func NewLogger() *XLog {
+	logger := logrus.New()
+	logger.SetFormatter(&logrus.JSONFormatter{})
+
+	return &XLog{
+		Logger: logger,
+	}
+}
+
 // XLog is a structuted logger with an opiniated format.
 // Must use this log format to be consistent with the underlying infrastructure.
 type XLog struct {
