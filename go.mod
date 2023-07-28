@@ -1,11 +1,11 @@
-module github.com/xsided/xlog
+module dev.azure.com/ManyDigital/MDLiveQuiz/_git/livequiz-xlog
 
 go 1.17
 
 require (
 	github.com/aws/aws-lambda-go v1.11.1
 	github.com/sirupsen/logrus v1.4.2
-	github.com/xsided/h8tp v0.0.0-20190628092125-c1ceb4306546
+	dev.azure.com/ManyDigital/MDLiveQuiz/_git/livequiz-h8tp v0.0.0-test
 )
 
 require (

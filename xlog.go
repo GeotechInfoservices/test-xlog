@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"net/http"
 
+	"dev.azure.com/ManyDigital/MDLiveQuiz/_git/livequiz-h8tp/request"
+	"dev.azure.com/ManyDigital/MDLiveQuiz/_git/livequiz-h8tp/response"
 	"github.com/sirupsen/logrus"
-	"github.com/xsided/h8tp/request"
-	"github.com/xsided/h8tp/response"
 )
 
 // NewRequestLogger Returns an instance of XLog which is set up to log within an http request

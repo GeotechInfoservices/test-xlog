@@ -9,9 +9,9 @@ import (
 
 	"github.com/sirupsen/logrus"
 
+	"dev.azure.com/ManyDigital/MDLiveQuiz/_git/livequiz-h8tp/request"
+	"dev.azure.com/ManyDigital/MDLiveQuiz/_git/livequiz-h8tp/response"
 	"github.com/aws/aws-lambda-go/events"
-	"github.com/xsided/h8tp/request"
-	"github.com/xsided/h8tp/response"
 )
 
 func TestRequestLogger(t *testing.T) {
