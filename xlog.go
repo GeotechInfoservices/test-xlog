@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"net/http"
 
-	"dev.azure.com/ManyDigital/MDLiveQuiz/_git/livequiz-h8tp/request"
-	"dev.azure.com/ManyDigital/MDLiveQuiz/_git/livequiz-h8tp/response"
+	"github.com/sankarbiswas07/h8tp/request"
+	"github.com/sankarbiswas07/h8tp/response"
 	"github.com/sirupsen/logrus"
 )
 
