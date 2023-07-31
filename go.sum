@@ -1,5 +1,5 @@
-github.com/GeotechInfoservices/test-h8tp v0.0.1-beta.1 h1:zix6Vz1Jd8R5NSiDy93pE2mGStij6lDxRb/lRzN3rSY=
-github.com/GeotechInfoservices/test-h8tp v0.0.1-beta.1/go.mod h1:RzFqtJV9MMH3+aSho4ULAce7u5iAzwW5It2rjSD92SI=
+github.com/geotechinfoservices/test-h8tp v0.0.1-beta.1 h1:zix6Vz1Jd8R5NSiDy93pE2mGStij6lDxRb/lRzN3rSY=
+github.com/geotechinfoservices/test-h8tp v0.0.1-beta.1/go.mod h1:RzFqtJV9MMH3+aSho4ULAce7u5iAzwW5It2rjSD92SI=
 github.com/aws/aws-lambda-go v1.11.1 h1:wuOnhS5aqzPOWns71FO35PtbtBKHr4MYsPVt5qXLSfI=
 github.com/aws/aws-lambda-go v1.11.1/go.mod h1:Rr2SMTLeSMKgD45uep9V/NP8tnbCcySgu04cx0k/6cw=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
