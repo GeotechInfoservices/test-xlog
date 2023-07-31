@@ -3,7 +3,7 @@ module github.com/geotechinfoservices/test-xlog
 go 1.17
 
 require (
-	github.com/geotechinfoservices/test-h8tp v0.0.1-beta.1
+	github.com/geotechinfoservices/test-h8tp v0.0.1-beta.2
 	github.com/aws/aws-lambda-go v1.11.1
 	github.com/sirupsen/logrus v1.4.2
 )
