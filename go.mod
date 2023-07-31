@@ -1,15 +1,19 @@
-module dev.azure.com/ManyDigital/MDLiveQuiz/_git/livequiz-xlog
+module github.com/GeotechInfoservices/test-xlog
 
 go 1.17
 
 require (
 	github.com/aws/aws-lambda-go v1.11.1
+	github.com/GeotechInfoservices/test-h8tp v0.0.1-beta.1
 	github.com/sirupsen/logrus v1.4.2
-	github.com/sankarbiswas07/h8tp v0.0.0-test
 )
 
 require (
-	github.com/asaskevich/govalidator v0.0.0-20190424111038-f61b66f89f4a // indirect
+	github.com/go-playground/locales v0.12.1 // indirect
+	github.com/go-playground/universal-translator v0.16.0 // indirect
 	github.com/konsorten/go-windows-terminal-sequences v1.0.2 // indirect
+	github.com/leodido/go-urn v1.1.0 // indirect
 	golang.org/x/sys v0.0.0-20190610200419-93c9922d18ae // indirect
+	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
+	gopkg.in/go-playground/validator.v9 v9.29.1 // indirect
 )

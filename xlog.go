@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/sankarbiswas07/h8tp/request"
-	"github.com/sankarbiswas07/h8tp/response"
+	"github.com/GeotechInfoservices/test-h8tp/request"
+	"github.com/GeotechInfoservices/test-h8tp/response"
 	"github.com/sirupsen/logrus"
 )
 
