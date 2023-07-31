@@ -7,11 +7,10 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/sirupsen/logrus"
-
+	"github.com/GeotechInfoservices/test-h8tp/request"
+	"github.com/GeotechInfoservices/test-h8tp/response"
 	"github.com/aws/aws-lambda-go/events"
-	"github.com/sankarbiswas07/h8tp/request"
-	"github.com/sankarbiswas07/h8tp/response"
+	"github.com/sirupsen/logrus"
 )
 
 func TestRequestLogger(t *testing.T) {

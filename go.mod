@@ -3,8 +3,8 @@ module github.com/GeotechInfoservices/test-xlog
 go 1.17
 
 require (
-	github.com/aws/aws-lambda-go v1.11.1
 	github.com/GeotechInfoservices/test-h8tp v0.0.1-beta.1
+	github.com/aws/aws-lambda-go v1.11.1
 	github.com/sirupsen/logrus v1.4.2
 )
 
@@ -14,6 +14,5 @@ require (
 	github.com/konsorten/go-windows-terminal-sequences v1.0.2 // indirect
 	github.com/leodido/go-urn v1.1.0 // indirect
 	golang.org/x/sys v0.0.0-20190610200419-93c9922d18ae // indirect
-	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
 	gopkg.in/go-playground/validator.v9 v9.29.1 // indirect
 )
